@@ -20,7 +20,7 @@ pig.init()
   
 print("r = red,o = orange,y = yellow,g = green,b = blue,p = purple,p + i = pink,t + u = turquoise,s + b = sky blue,l = lime,z = screen black,x = screen white,m = magenta,d + b = dark blue,s + c = skin color,e = black,w + h = white,s + f1 = save slot1,s + f2 = save") 
 print('slot2,s + f3 = save slot3,s + f4 = save slot4,s + f5 = save slot5,s + f6 = save slot6,s + f7 = save slot7,s + f8 = save slot8,s + f9 = save slot9,s + end = save slot0, l + 0 = load image 0,hold equale key = rainbow')
-print('c + i = circle mode, s + q = square mode, c + h = christmas mode, n + c = not christmas mode, while hold equale key rainbow mode = True, if speed 9 pattern apears,shift + 8 = pattern appears while moving diagnale')
+print('c + i = circle mode, s + q = square mode, c + h = christmas mode, n + c = not christmas mode, while hold equale key rainbow mode = True, if speed 9 pattern apears,shift + 8 = pattern appears while moving diagnale, c+r = CRAZY_MODE')
 
 
   
@@ -61,6 +61,7 @@ run = True
 print('hi Gus')  
 # infinite loop 
 circle_mode = False
+crazy = False
 num = 0
 while run:
     pig.time.delay(10)
@@ -429,7 +430,8 @@ while run:
             white     
         ]
         crcoli = 0
-        
+        crcoli = crcoli % len(cr_co)
+        cray_color = crcoli[cr_co]
             
 
         if keys[pig.K_LEFT] or keys[pig.K_a]and x>0:
