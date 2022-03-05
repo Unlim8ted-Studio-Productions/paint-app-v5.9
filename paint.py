@@ -6,6 +6,7 @@ from pygame.constants import MOUSEBUTTONDOWN, MOUSEBUTTONUP, K_i, K_s,RESIZABLE
 import subprocess
 from pygame import gfxdraw
 from pygame.draw import rect
+from pygame.gfxdraw import filled_circle as circle
 #import downloader.downloader as info
 #p_t_1 = "C:\ "
 #os.listdir()
@@ -116,7 +117,7 @@ while run:
     magenta = (139,0,139)
     dark_blue = (0,0,139)
     skin_color = (250,231,218)
-    white1 = (255,255,255)
+    color1 = (255,255,255)
     lime = (0,255,0)
 
 
@@ -125,7 +126,7 @@ while run:
     if keys[pig.K_EQUALS]:
         rainbow_mode = True
     
-    while rainbow_mode == True:
+    if rainbow_mode == True:
         if keys[pig.K_LEFT] or keys[pig.K_a]and x>0:
             x -= ma
             a -= ma
@@ -184,10 +185,10 @@ while run:
         color = pink
 
     if color == white and christmas == False:
-        white1 = black
+        color1 = black
     
     if color == black and christmas == False:
-        white1 = white
+        color1 = white
    
     if keys[pig.K_1]:
         width = 2
@@ -260,7 +261,7 @@ while run:
         win.blit(pig.image.load(p_a_p + r'paint app gus v5\data/saves/1.png'),(0,0))
     
     if keys[pig.K_s] and keys[pig.K_F2]:
-        white1 = color
+        color1 = color
         pig.image.save(win, path +"1.png")
         pig.image.save(win, (p_a_p + r'paint app gus v5\data/saves/2.png'))
         subprocess.Popen('explorer "C:/desktop"')
@@ -269,7 +270,7 @@ while run:
         win.blit(pig.image.load(p_a_p + r'paint app gus v5\data/saves/2.png'),(0,0))
 
     if keys[pig.K_s] and keys[pig.K_F3]:
-        white1 = color
+        color1 = color
         pig.image.save(win, path+"2.png")
         pig.image.save(win, (p_a_p + r'paint app gus v5\data/saves/3.png'))
         subprocess.Popen('explorer "C:/desktop"')
@@ -279,7 +280,7 @@ while run:
 
                 
     if keys[pig.K_s] and keys[pig.K_F4]:
-        white1 = color
+        color1 = color
         pig.image.save(win, path+"3.png")
         pig.image.save(win, (p_a_p + r'paint app gus v5\data/saves/4.png'))
         subprocess.Popen('explorer "C:/desktop"')
@@ -288,7 +289,7 @@ while run:
         win.blit(pig.image.load(p_a_p + r'paint app gus v5\data/saves/4.png'),(0,0))
 
     if keys[pig.K_s] and keys[pig.K_F5]:
-        white1 = color
+        color1 = color
         pig.image.save(win, path+"4.png")
         pig.image.save(win, (p_a_p + r'paint app gus v5\data/saves/5.png'))
         subprocess.Popen('explorer "C:/desktop"')
@@ -297,7 +298,7 @@ while run:
         win.blit(pig.image.load(p_a_p + r'paint app gus v5\data/saves/5.png'),(0,0))
 
     if keys[pig.K_s] and keys[pig.K_F6]:
-        white1 = color
+        color1 = color
         pig.image.save(win, path+"5.png")
         pig.image.save(win, (p_a_p + r'paint app gus v5\data/saves/6.png'))
         subprocess.Popen('explorer "C:/desktop"')
@@ -306,7 +307,7 @@ while run:
         win.blit(pig.image.load(p_a_p + r'paint app gus v5\data/saves/6.png'),(0,0))
 
     if keys[pig.K_s] and keys[pig.K_F7]:
-        white1 = color
+        color1 = color
         pig.image.save(win, path+"6.png")
         pig.image.save(win, (p_a_p + r'paint app gus v5\data/saves/7.png'))
         subprocess.Popen('explorer "C:/desktop"')
@@ -315,7 +316,7 @@ while run:
         win.blit(pig.image.load(p_a_p + r'paint app gus v5\data/saves/7.png'),(0,0))
 
     if keys[pig.K_s] and keys[pig.K_F8]:
-        white1 = color
+        color1 = color
         pig.image.save(win, path+"7.png")
         pig.image.save(win, (p_a_p + r'paint app gus v5\data/saves/8.png'))
         subprocess.Popen('explorer "C:/desktop"')
@@ -324,7 +325,7 @@ while run:
         win.blit(pig.image.load(p_a_p + r'paint app gus v5\data/saves/8.png'),(0,0))
 
     if keys[pig.K_s] and keys[pig.K_F9]:
-        white1 = color
+        color1 = color
         pig.image.save(win, path+"8.png")
         pig.image.save(win, (p_a_p + r'paint app gus v5\data/saves/9.png'))
         subprocess.Popen('explorer "C:/desktop"')
@@ -333,7 +334,7 @@ while run:
         win.blit(pig.image.load(p_a_p + r'paint app gus v5\data/saves/9.png'),(0,0))
 
     if keys[pig.K_s] and keys[pig.K_END]:
-        white1 = color
+        color1 = color
         pig.image.save(win, path+"9.png")
         pig.image.save(win, (p_a_p + r'paint app gus v5\data/saves/0.png'))
         subprocess.Popen('explorer "C:/desktop"')
@@ -391,7 +392,7 @@ while run:
         circle_mode = True
         width_hight = 5
         color = red
-        white1 = green
+        color1 = green
         ma = 30
         if keys[pig.K_1] and keys[pig.K_c]:
             ma = 3
@@ -403,18 +404,67 @@ while run:
         circle_mode = False
     
             
+    if keys[pig.K_c] and keys[pig.r]:
+        crazy = True
+    
+    if crazy == True:
+        width1 + 10
+        height1 + 10
+        width_hight1 + 10
+        cr_co = [
+            black,
+            red,
+            orange,
+            yellow,
+            lime,
+            green,
+            turquoise,
+            sky_blue,
+            blue,
+            dark_blue,
+            magenta,
+            purple,
+            pink,
+            skin_color,
+            white     
+        ]
+            
+            
+            
         
+        if keys[pig.K_LEFT] or keys[pig.K_a]and x>0:
+            x -= ma
+            a -= ma
+            color1 = blue
+          
+        if keys[pig.K_RIGHT] or keys[pig.K_d]and x<1920-width:
+            x += ma
+            a += ma
+            color1 = green
+         
+        if keys[pig.K_UP] or keys[pig.K_w]and y>0:
+            y -= ma
+            b -= ma  
+            color1 = red
+      
+        if keys[pig.K_DOWN] or keys[pig.K_s] and y<1025-height:
+            y += ma
+            b += ma
+            color1 = yellow
+        
+
+    
             
     
 
     
     if not circle_mode:
         rect(win, (color), (x, y, width, height))    
-        rect(win, (white1), (a, b, width1, height1))  
+        rect(win, (color1), (a, b, width1, height1))  
         
     else:
-        gfxdraw.filled_circle(win, x +10, y+9, width_hight, color)
-        gfxdraw.filled_circle(win, x +10, y+9, width_hight1,white1)  
+        circle(win, x +10, y+9, width_hight, color)
+        circle(win, x +10, y+9, width_hight1,color1)  
         
         
     
