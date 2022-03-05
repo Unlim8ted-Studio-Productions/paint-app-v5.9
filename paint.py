@@ -404,7 +404,7 @@ while run:
         circle_mode = False
     
             
-    if keys[pig.K_c] and keys[pig.r]:
+    if keys[pig.K_c] and keys[pig.K_r]:
         crazy = True
     
     if crazy == True:
@@ -428,29 +428,52 @@ while run:
             skin_color,
             white     
         ]
-            
-            
-            
+        crcoli = 0
         
+            
+
         if keys[pig.K_LEFT] or keys[pig.K_a]and x>0:
             x -= ma
             a -= ma
             color1 = blue
+            crcoli-=1
+            crcoli = crcoli % len(cr_co)
+            cray_color = crcoli
+            
           
         if keys[pig.K_RIGHT] or keys[pig.K_d]and x<1920-width:
             x += ma
             a += ma
             color1 = green
-         
+            crcoli +=1
+            crcoli = crcoli % len(cr_co)
+            cray_color = crcoli
+            
         if keys[pig.K_UP] or keys[pig.K_w]and y>0:
             y -= ma
             b -= ma  
             color1 = red
+            crcoli -= 2
+            crcoli = crcoli % len(cr_co)
+            cray_color = crcoli
       
         if keys[pig.K_DOWN] or keys[pig.K_s] and y<1025-height:
             y += ma
             b += ma
             color1 = yellow
+            crcoli += 2
+            crcoli = crcoli % len(cr_co)
+            cray_color = crcoli
+        circle(win, x + 30, y + 9, width_hight, cray_color)
+        circle(win, x - 30, y - 9, width_hight1, cray_color+2)
+        circle(win, x + 30, y - 30, width_hight, cray_color + 1)
+        circle(win, x - 35, y + 40, width_hight1, cray_color+4)
+        circle(win, x - 29, y + 30, width_hight, cray_color+3)
+        circle(win, x + 27, y + 25, width_hight, cray_color+5)
+        if keys[pig.K_c] and keys[pig.K_r]:
+            crazy = False
+    
+        
         
 
     
