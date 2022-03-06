@@ -20,7 +20,8 @@ pig.init()
   
 print("r = red,o = orange,y = yellow,g = green,b = blue,p = purple,p + i = pink,t + u = turquoise,s + b = sky blue,l = lime,z = screen black,x = screen white,m = magenta,d + b = dark blue,s + c = skin color,e = black,w + h = white,s + f1 = save slot1,s + f2 = save") 
 print('slot2,s + f3 = save slot3,s + f4 = save slot4,s + f5 = save slot5,s + f6 = save slot6,s + f7 = save slot7,s + f8 = save slot8,s + f9 = save slot9,s + end = save slot0, l + 0 = load image 0,hold equale key = rainbow')
-print('c + i = circle mode, s + q = square mode, c + h = christmas mode, n + c = not christmas mode, while hold equale key rainbow mode = True, if speed 9 pattern apears,shift + 8 = pattern appears while moving diagnale, c+r = CRAZY_MODE')
+print('c + i = circle mode, s + q = square mode, c + h = christmas mode, n + c = not christmas mode, while hold equale key rainbow mode = True, if speed 9 pattern apears,shift + 8 = pattern appears while moving diagnale')
+print('hold c+r = CRAZY_MODE')   
 
 
   
@@ -63,6 +64,7 @@ print('hi Gus')
 circle_mode = False
 crazy = False
 num = 0
+crcoli = 0
 while run:
     pig.time.delay(10)
       
@@ -408,7 +410,7 @@ while run:
     if keys[pig.K_c] and keys[pig.K_r]:
         crazy = True
     
-    if crazy == True:
+    while crazy == True:
         width1 + 10
         height1 + 10
         width_hight1 + 10
@@ -429,9 +431,8 @@ while run:
             skin_color,
             white     
         ]
-        crcoli = 0
         crcoli = crcoli % len(cr_co)
-        cray_color = crcoli[cr_co]
+        cray_color = cr_co[crcoli]
             
 
         if keys[pig.K_LEFT] or keys[pig.K_a]and x>0:
@@ -440,7 +441,7 @@ while run:
             color1 = blue
             crcoli-=1
             crcoli = crcoli % len(cr_co)
-            cray_color = crcoli
+            
             
           
         if keys[pig.K_RIGHT] or keys[pig.K_d]and x<1920-width:
@@ -449,7 +450,7 @@ while run:
             color1 = green
             crcoli +=1
             crcoli = crcoli % len(cr_co)
-            cray_color = crcoli
+            
             
         if keys[pig.K_UP] or keys[pig.K_w]and y>0:
             y -= ma
@@ -457,7 +458,7 @@ while run:
             color1 = red
             crcoli -= 2
             crcoli = crcoli % len(cr_co)
-            cray_color = crcoli
+            
       
         if keys[pig.K_DOWN] or keys[pig.K_s] and y<1025-height:
             y += ma
@@ -465,13 +466,14 @@ while run:
             color1 = yellow
             crcoli += 2
             crcoli = crcoli % len(cr_co)
-            cray_color = crcoli
+            
+        color = cr_co
         circle(win, x + 30, y + 9, width_hight, cray_color)
-        circle(win, x - 30, y - 9, width_hight1, cray_color+2)
-        circle(win, x + 30, y - 30, width_hight, cray_color + 1)
-        circle(win, x - 35, y + 40, width_hight1, cray_color+4)
-        circle(win, x - 29, y + 30, width_hight, cray_color+3)
-        circle(win, x + 27, y + 25, width_hight, cray_color+5)
+        circle(win, x - 30, y - 9, width_hight1, cray_color)
+        circle(win, x + 30, y - 30, width_hight, cray_color)
+        circle(win, x - 35, y + 40, width_hight1, cray_color)
+        circle(win, x - 29, y + 30, width_hight, cray_color)
+        circle(win, x + 27, y + 25, width_hight, cray_color)
         if keys[pig.K_c] and keys[pig.K_r]:
             crazy = False
     
