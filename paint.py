@@ -25,7 +25,7 @@ print('hold c+r = CRAZY_MODE')
 
 
   
-icon = pig.image.load(p_a_p + r'paint app gus v5\icon.ico')
+icon = pig.image.load(p_a_p + 'paint app gus v5\Icon.ico')
 win_size = (1920,1025)
 win = pig.display.set_mode(win_size,RESIZABLE)
 pig.display.set_caption("paint")
@@ -103,7 +103,7 @@ while run:
         b += ma
    
     
-    path = f'{s_i_p}{num + 1}'
+    path = f'{s_i_p}'
     pig.display.update()        
     
     white = (255,255,255)
@@ -255,7 +255,7 @@ while run:
     
     if keys[pig.K_s] and keys[pig.K_F1]:
         num += 1
-        pig.image.save(win, path+"1.png")
+        pig.image.save(win, path+'1.png')
         pig.image.save(win, (p_a_p + r'paint app gus v5\data/saves/{num}.png'))
         subprocess.Popen('explorer "C:/desktop"')
         subprocess.CREATE_NEW_CONSOLE
